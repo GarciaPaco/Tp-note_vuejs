@@ -64,9 +64,9 @@ async function filterByNumber(){
         <div class="flex">
             <div v-for="episode in episodes.results">
                 <div class="card">
-                Nom : {{episode.name}} <br>
-                Date de sortie : {{episode.air_date}} <br>
-                Numéro : {{episode.episode}}
+                    <p> Nom : {{episode.name}}</p> <br>
+               <p> Date de sortie : {{episode.air_date}}</p> <br>
+               <p> Numéro : {{episode.episode}}</p>
                 <router-link :to="{ name: 'ficheEpisode', params: { id: episode.id }}">Voir plus</router-link>
                  </div>
             </div>
@@ -83,9 +83,30 @@ async function filterByNumber(){
     display: flex;
     flex-wrap: wrap;
 }
-.card{
-    margin: 10px;
+.card {
+    border: 1px solid black;
+    border-radius: 5px;
     padding: 10px;
-    background-color: gray;
+    margin: 10px;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: slategrey;
 }
+p {
+    margin: 10px;
+    color: goldenrod;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: red;
+}
+
 </style>

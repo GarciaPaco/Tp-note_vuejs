@@ -21,14 +21,17 @@ onMounted(async () => {
 
 <template>
 
-    <div v-if="personnage != null">
-        Nom : {{personnage.name}} <br>
-        Espece : {{personnage.species}} <br>
+    <div class ="ficheperso" v-if="personnage != null">
+        <div class="cardPerso">
+        <p>Nom : {{personnage.name}} </p><br>
+        <p>Espece : {{personnage.species}}</p> <br>
+
         <img :src="personnage.image" alt="portait d'un personnage"> <br>
-        <template v-for="episode in episodes">
+        <template class="flex" v-for="episode in episodes">
             <router-link :to="{ name: 'ficheEpisode', params: { id: episode }}">Episode {{episode}}</router-link>
             <br>
         </template>
+        </div>
     </div>
     <div v-else>
         Chargement en cours !
@@ -37,5 +40,10 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-
+.ficheperso{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
 </style>

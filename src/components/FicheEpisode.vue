@@ -31,12 +31,12 @@ onMounted(async () => {
 
 <template>
   <main>
-      <div v-if="episode != null">
-          Nom : {{episode.name}} <br>
-          Episode : {{episode.episode}} <br>
-          Sortie : {{episode.air_date}} <br>
+      <div class="center" v-if="episode != null">
+         <p>Nom : {{episode.name}} </p><br>
+          <p>Episode : {{episode.episode}} </p><br>
+          <p>Sortie : {{episode.air_date}} </p><br>
           <template v-if="perso1 != null" v-for="personnage in personnages">
-              Perso :  <router-link :to="{ name: 'fichePerso', params: { id: personnage }}">{{perso1.name}}</router-link>
+              <p>Perso :  </p><router-link :to="{ name: 'fichePerso', params: { id: personnage }}">{{perso1.name}}</router-link>
               <img :src="perso1.image" alt="portait d'un des personnages"> <br>
 
 
@@ -45,7 +45,7 @@ onMounted(async () => {
 
       </div>
       <div v-else>
-          Chargement en cours ...
+          <p>Chargement en cours ...</p>
       </div>
       <router-link to="/">Retour aux épisodes</router-link>
 
@@ -53,4 +53,7 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+.center {
+    text-align: center;
+}
 </style>
