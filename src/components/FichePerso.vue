@@ -25,7 +25,7 @@ onMounted(async () => {
         <div class="cardPerso">
         <p>Nom : {{personnage.name}} </p><br>
         <p>Espece : {{personnage.species}}</p> <br>
-
+<!--Affichage des persos qui boucle sur le premier de l'array renvoyé par l'API, mais l'URL pointe bien vers les bons persos !-->
         <img :src="personnage.image" alt="portait d'un personnage"> <br>
         <template class="flex" v-for="episode in episodes">
             <router-link :to="{ name: 'ficheEpisode', params: { id: episode }}">Episode {{episode}}</router-link>

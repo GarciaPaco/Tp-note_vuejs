@@ -76,5 +76,13 @@ function rechercher(){
 .recherche{
     margin: 10px;
 }
-
+button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: goldenrod;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
+}
 </style>
